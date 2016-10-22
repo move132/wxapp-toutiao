@@ -62,7 +62,7 @@ Page({
     console.log(e)
   },
   lower: function(e) { //底部
-   
+    console.log(e)
     var that = this;
    
     that.setData({

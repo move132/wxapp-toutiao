@@ -1,3 +1,8 @@
+
+var t=require("../../utils/test");
+
+console.log( t );
+var socket;
 Page({
     data: {
         item: {
@@ -57,7 +62,7 @@ Page({
         channels:{
           mychannels:["视频","热点","社会","娱乐","军事","科技","汽车","体育","财经","国际","时尚"],
           recommchannels:["精选","数码","时尚","辟谣","奇葩","游戏","旅游","育儿","减肥","养生","美食","政务","历史","探索","故事","美文","情感","美图","房产","家居","搞笑","星座","文化","特卖","两会","书籍","手机","宠物","股票","科学","语录","动漫","美女","中国新唱将","娱乐","电影","问答"],
-        }, 
+        },
         list:[],   //新闻列表数据
         text:'',     //标题
         act_index: 0, //当前选中的
@@ -67,7 +72,9 @@ Page({
         animationData:{},  //动画
         setMenuListShow:true, // 频道列表是否显示
         mychannelsShow:true,  // 频道列表（我的）关闭按钮是否显示
-        recommchannelsShow:true // 频道列表（推荐）关闭按钮是否显示
+        recommchannelsShow:true, // 频道列表（推荐）关闭按钮是否显示
+        test:t.test()
+
     },
     upper: function() {},
     lower: function() {},
@@ -82,7 +89,7 @@ Page({
             scrollLeft:_scrollleft-58*2,
             text: text
         });
-       
+
     },
     clickInterest:function(e) {
       console.log(e.currentTarget.dataset.id);
@@ -99,10 +106,33 @@ Page({
       this.setData({
         actionSheetHidden: !this.data.actionSheetHidden,
         toastHidden: false
-      })
+      });
+      console.log( socket );
+
+
+      wx.onSocketOpen(function(res){
+        console.log("WebSocket连接已打开！");
+      });
+
+      wx.sendSocketMessage({
+        data:'发送一段信息！！！'
+      });
+
+      wx.onSocketError(function(res){
+        console.log("WebSocket连接打开失败，请检查！",res);
+      });
+
+      wx.onSocketMessage(function(res){
+        console.log("收到服务器内容：" + res.data);
+      });
+
+
+    },
+    test:function(){
+      return "test log!!";
     },
     toastChange:function(e){
-      this.setData({ 
+      this.setData({
         toastHidden: true
       })
     },
@@ -131,10 +161,24 @@ Page({
        }
     },
     onShow:function(){
-      
+
+    },
+    inputchange:function(e){
+      console.log(e.detail.value);
     },
     onReady: function() {
         var _this=this;
+
+        if (!socket) {
+          socket= wx.connectSocket({
+            url:"ws://localhost:8181/22",
+            data:{},
+            header:{
+              'content-type': 'application/json'
+            },
+            method:"GET"
+          });
+        }
         //console.log("parame:", this);
         /*wx.setNavigationBarTitle({
             "title": this.title
@@ -171,21 +215,21 @@ Page({
             timingFunction:"ease",
         });
 
-        
+
 
         this.animation = animation;
 
 
-        
 
-         
-          this.animation.scale(0).step(); 
+
+
+          this.animation.scale(0).step();
           this.setData({
             animationData:this.animation.export()
           });*/
-         
 
-       
+
+
     },
     onLoad: function(options) {
         this.title = options.title

@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/test/test",
+    "pages/test/test", 
     "pages/index/index",
     "pages/logs/logs", 
     "pages/detail/detail"
@@ -31,7 +31,7 @@
       "selectedIconPath":"image/vedio_sed.png",
       "text": "视频"
     }, {
-      "pagePath": "pages/index/index",
+      "pagePath": "pages/detail/detail",
       "iconPath": "image/follow.png",
       "backgroundColor":"#000",
       "color":"#eb4f38",

@@ -1,14 +1,12 @@
 <view class="wpp_warp">
-	<!-- <text>测试测试测试</text>  
--->
-<!-- <div style="width:100%; display: inline-block; background: red; height: 30px;">dsadsadsa</div>
-<div style="width:100%;  display: inline-block; background: orange; height: 30px;">符合迪斯科解放和独守空房几乎都是开放</div>
--->
+	 
 <template is="left" data="{{...item,act_index,scrollLeft}}"/>
 
 <!-- <template is="right" data="{{...item,text,list}}"/> -->
 <template is="new_list"  data="{{...item,animationData}}"/>
 <template is="dialog_setting" data="{{...item,...channels,setMenuListShow,mychannelsShow,recommchannelsShow}}"/>
+
+{{test}}
 
 <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetChange" class="action_sheet">
     <action-sheet-item class="item" bindtap="binditem" data-type="1">不感兴趣</action-sheet-item>
@@ -153,6 +151,10 @@
 			<block wx:for="{{recommchannels}}" wx:for-item="i">
 				<view class="news_menu_item" bindlongtap="longtap" data-type="recom">{{i}}<view class="close {{!recommchannelsShow? 'show' :''}}"></view></view>
 			</block> 
+
+				<input style="background:#fff;" type="text" placehodler="请输入！！！" bindchange="inputchange" />
+			 
 		</view>
+		
 	</view> 
 </template>
