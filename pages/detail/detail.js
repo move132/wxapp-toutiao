@@ -1,7 +1,7 @@
 
-var t=require("../../utils/test");
+//var t=require("../../utils/test");
 
-console.log( t );
+//console.log( t );
 var socket;
 Page({
     data: {
@@ -72,8 +72,7 @@ Page({
         animationData:{},  //动画
         setMenuListShow:true, // 频道列表是否显示
         mychannelsShow:true,  // 频道列表（我的）关闭按钮是否显示
-        recommchannelsShow:true, // 频道列表（推荐）关闭按钮是否显示
-        test:t.test()
+        recommchannelsShow:true // 频道列表（推荐）关闭按钮是否显示 
 
     },
     upper: function() {},

@@ -2,10 +2,25 @@
 	overflow: hidden;
 	font-size:12px;
 	color:#666;
-	padding:10px;
-	border-bottom:1px solid #f3f3f3;
+	padding:4px 10px;
+	border-bottom:1px solid #f1f1f1;
 	font-family: 微软雅黑;
+	margin:0 4px;
 }
+.list_item.bg{
+	background:#f3f3f3;
+	color:#fff;
+	height:30px;
+	line-height:30px;
+	padding:0;
+}
+.list_item.bg .u-time{
+	padding:0 0 0 10px;
+	margin:0;
+	font-size:16px;
+	font-weight:bold;
+}
+
 .list_item:active{
 	background:#f0f0f0;
 }
@@ -25,26 +40,14 @@
 }
 .list_item .u-time{
 	text-align:left; 
-	color:#999;
-}
-.list_item .is3d{
-	display:inline-block;
-	background:red;
-	color:#fff;
-	font-size:12px;
-	text-align:center;
-	border-radius:3px;
-	padding:0 5px;
+	color:#333;
+	margin-left:60px;
+	padding:15px 0;
 }
  
-.tips1{
-	font-size:14px;
-} 
 
 .scroll_view{
-	position:absolute;
-	top:0;
-	left:0;
-	width:100%;
+	 position:absolute;
 	height:100%;
+	width:100%;
 }

@@ -1,6 +1,6 @@
 //logs.js
 var app = getApp();
-
+console.log(app );
 var num=0;
 Page({
   data: {
@@ -62,7 +62,7 @@ Page({
     console.log(e)
   },
   lower: function(e) { //底部
-    console.log(e)
+    console.log(e);
     var that = this;
    
     that.setData({

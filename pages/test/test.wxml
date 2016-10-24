@@ -21,7 +21,7 @@
 <!-- <loading hidden="{{hidden}}" bindchange="loadingChange">
     加载中...
   </loading> -->  
-<scroll-view scroll-y="true" style="height: 100%;"  bindscrolltoupper="upper" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+<scroll-view scroll-y="true" class="scroll_view" bindscrolltoupper="upper" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
   <block  wx:for-items="{{list}}" wx:for-item="item">
     <navigator url="../detail/detail?id={{item.id}}&title={{item.nm}}">
     <view class="list_item" data-id="{{item.id}}" data-title="{{item.title}}" data-time="{{item.time}}"  bindtap="clickHandler">
