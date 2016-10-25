@@ -33,7 +33,7 @@
             "selectedIconPath": "image/vedio_sed.png",
             "text": "视频"
         }, {
-            "pagePath": "pages/index/index",
+            "pagePath": "pages/carlist/carlist",
             "iconPath": "image/follow.png",
             "backgroundColor": "#000",
             "color": "#eb4f38",
