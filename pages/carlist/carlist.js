@@ -1,7 +1,7 @@
 //logs.js
 var app = getApp();
 var car_list = require("../../utils/car_list");
-//console.log(car_list.list);
+console.log(car_list.list);
 Page({
     data: {
         list: car_list.list
