@@ -7,5 +7,5 @@
 	*   email:move11@126.com    *
 	\***************************/
 (function(global){
-
+ 
 })(window)
