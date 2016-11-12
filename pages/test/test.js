@@ -75,7 +75,13 @@ Page({
       });
     };
     if (!that.data.hasMore) return;
-    wx.request({
+    var movies=require("../../utils/movies");
+
+     that.setData({
+       list: that.data.list.concat( movies.data.movies )
+    });
+
+   /* wx.request({
       url: 'http://m.maoyan.com/movie/list.json?type=hot&offset=0&limit=1000',
       data: {},
       header: {
@@ -89,7 +95,7 @@ Page({
         });
         num++;
       }
-    });
+    });*/
   },
  /* scroll: function(e) {
     console.log(e)
@@ -128,7 +134,11 @@ Page({
     })*/
 
     var _this=this;
-    wx.request({
+    var movies=require("../../utils/movies");
+    _this.setData({
+       list:movies.data.movies
+    });
+    /*wx.request({
       url: 'http://m.maoyan.com/movie/list.json?type=hot&offset=0&limit=1000',
       data: {},
       header: {
@@ -141,7 +151,7 @@ Page({
            list:data.movies
         });
       }
-    });
+    });*/
   }
 });
 

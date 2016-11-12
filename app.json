@@ -9,8 +9,8 @@
     "window": {
         
         "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#48C23D",
-        "navigationBarTitleText": "movecss",
+        "navigationBarBackgroundColor": "#eb4f38",
+        "navigationBarTitleText": "头条",
         "navigationBarTextStyle": "white"
     },
     "tabBar": {

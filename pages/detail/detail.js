@@ -2,6 +2,8 @@
 //var t=require("../../utils/test");
 
 //console.log( t );
+var movies=require("../../utils/movies");
+console.log(movies);
 var socket;
 Page({
     data: {
@@ -234,7 +236,11 @@ Page({
         this.title = options.title
         //console.log(options);
         var _this=this;
-        wx.request({
+
+        _this.setData({
+           list:movies.data.movies
+        });
+       /* wx.request({
           url: 'http://m.maoyan.com/movie/list.json?type=hot&offset=0&limit=1000',
           data: {},
           header: {
@@ -247,6 +253,6 @@ Page({
                list:data.movies
             });
           }
-        });
+        });*/
     }
 })
