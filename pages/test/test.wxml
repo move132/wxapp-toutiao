@@ -22,13 +22,13 @@
     加载中...
   </loading> -->  
 <scroll-view scroll-y="true" class="scroll_view" bindscrolltoupper="upper" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
-  <block  wx:for-items="{{list}}" wx:for-item="item">
+  <block  wx:for-items="{{list}}" wx:for-item="item" wx:key="{{item.id}}">
     <navigator url="../detail/detail?id={{item.id}}&title={{item.nm}}">
     <view class="list_item" data-id="{{item.id}}" data-title="{{item.title}}" data-time="{{item.time}}"  bindtap="clickHandler">
       <image class="userinfo-avatar-img" src="{{item.img}}" background-size="cover"></image>
       <view class="u-info">
         <view>
-            {{item.nm}}   <template is="template"  />
+            {{item.nm}}  
             <view wx:if="{{item['3d']}}"  class="is3d">3D</view> 
         </view>
         <view class="u-time">评分：{{item.sc}}</view> 

@@ -23,7 +23,7 @@
 <template name="left">
 	<view  class="wpp_left">
 		<scroll-view scroll-x="true" class="scroll_box"   bindscrolltoupper="upper" bindscrolltolower="lower" scroll-left="{{scrollLeft}}"   >
-			<block  wx:for-items="{{menu}}" wx:for-item="item">
+			<block  wx:for-items="{{menu}}" wx:for-item="item" wx:key="{{index}}">
 				<!-- <view wx:if="{{index==0}}" data-url="{{item.url}}"  class="btn cur"  bindtap="clickHandler" >{{item.title}}</view>
 				-->
 				<text   data-url="{{item.url}}" data-text="{{item.title}}" data-scrollleft="{{index*46}}" data-index="{{index}}" class="btn {{act_index==index ?'cur':''}}"  bindtap="clickHandler" >{{item.title}}</text>
@@ -39,7 +39,7 @@
 	<view class="wpp_right">
 
 	<scroll-view scroll-y="true" style="height: 100%;"  bindscrolltoupper="upper" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
-	<block  wx:for-items="{{list}}" wx:for-item="item">
+	<block  wx:for-items="{{list}}" wx:for-item="item" wx:key="{{index}}">
 		<navigator url="../detail/detail?id={{item.id}}&title={{item.nm}}">
 			<view class="list_item" data-id="{{item.id}}" data-title="{{item.title}}" data-time="{{item.time}}"  bindtap="clickHandler">
 				<image class="userinfo-avatar-img" src="{{item.img}}" background-size="cover"></image>
@@ -71,7 +71,7 @@
 <template name="new_list">
 	<view class="wpp_right"> 
 		<scroll-view scroll-y="true" style="height: 100%;"  bindscrolltoupper="upper" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
-			<block wx:for="{{[1, 2,3,4,5]}}" wx:for-item="i">
+			<block wx:for="{{[1, 2,3,4,5]}}" wx:for-item="i" wx:key="{{index}}">
 				<view class="news_wrap"   >
 					<view class="click_news">
 						<view class="desc">
@@ -142,13 +142,13 @@
 		<view class="close" bindtap="closeHandler"></view>
 		<view class="title">我的频道</view>
 		<view>
-			<block wx:for="{{mychannels}}" wx:for-item="i">
+			<block wx:for="{{mychannels}}" wx:for-item="i" wx:key="{{index}}">
 				<view class="news_menu_item" bindlongtap="longtap" data-type="my">{{i}}<view class="close {{!mychannelsShow? 'show' :''}}"></view></view>
 			</block> 
 		</view>
 		<view  class="title">频道推荐</view>
 		<view>
-			<block wx:for="{{recommchannels}}" wx:for-item="i">
+			<block wx:for="{{recommchannels}}" wx:for-item="i" wx:key="{{index}}">
 				<view class="news_menu_item" bindlongtap="longtap" data-type="recom">{{i}}<view class="close {{!recommchannelsShow? 'show' :''}}"></view></view>
 			</block> 
 
