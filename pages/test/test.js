@@ -132,7 +132,7 @@ Page({
         userInfo: userInfo
       })
     })*/
-
+    console.log(window);
     var _this=this;
     var movies=require("../../utils/movies");
     _this.setData({
