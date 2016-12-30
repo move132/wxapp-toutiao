@@ -23,3 +23,29 @@
   margin-top: 200px;
 }
 
+page{
+  background:#eb4f38;
+}
+
+.wave {
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  bottom: 0;
+  opacity: 0.125;
+  height: 260rpx;
+  width: 2250rpx;
+  animation: wave 10s linear infinite;
+}
+.wave-bg {
+  z-index: 1;
+  animation: wave-bg 10.25s linear infinite;
+}
+@keyframes wave{
+  from {transform: translate3d(125rpx,0,0);}
+  to {transform: translate3d(1125rpx,0,0);}
+}
+@keyframes wave-bg{
+  from {transform: translate3d(375rpx,0,0);}
+  to {transform: translate3d(1375rpx,0,0);}
+}
